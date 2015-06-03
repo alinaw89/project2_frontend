@@ -1,0 +1,38 @@
+/*header*/
+#mainheader{
+  background-image: url("http://i.imgur.com/ofL3GvE.png");
+  background-repeat: no-repeat;
+  height: 281px;
+  width: 508px;
+  position: absolute;
+  right: 0;
+  background-size: cover;
+}
+
+#banner{
+
+  background-image: url("http://i.imgur.com/cyzO7tM.png");
+  width: 510px;
+  height: 130px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: calc(50% - 455px);
+  top: 190px;
+}
+ #wrapper{
+  height: 320px;
+ }
+
+img{
+  margin-top:-230px;
+  margin-left:290px;
+}
+/*body*/
+body {
+  width:100%;
+  background-color: #F2F1ED;
+}
+
+#new-product{
+clear:both;
+}
