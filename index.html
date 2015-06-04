@@ -12,7 +12,7 @@
 <body>
 
 <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -22,22 +22,31 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">COMPACT</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">About Compact<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Add Cosmetic</a></li>
+        <li class="active"><a id="about-compact" href="#">About Compact<span class="sr-only">(current)</span></a></li>
+        <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
+          <a id="display-cosmetic-bag" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Eyes</a></li>
             <li><a href="#">Lips</a></li>
             <li><a href="#">Face</a></li>
             <li><a href="#">Hair</a></li>
+            <li><a href='#'>Body</a></li>
             <!-- <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>
             <li><a href="#">One more separated link</a></li> -->
+          </ul>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a id="register-user" href="#">Create New User</a></li>
+            <li><a id="user-login" href="#">Log In</a></li>
+            <li><a id="edit-profile" href="#">Edit Profile</a></li>
+            <li><a id="logout" href="#">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -46,8 +55,8 @@
 
 <!-- HEADER -->
 <div id="wrapper">
-  <div id="mainheader"></div>
-  <div id="banner"></div>
+  <div id="brushheader"></div>
+  <div id="compactheader"></div>
 </div>
 
 <!-- <div class="container-fluid">
@@ -57,24 +66,71 @@
 </div> -->
 
 <!-- ABOUT -->
-<div>
-<h2>Compact is </h2>
+<div id="aboutapp">
+<h4><strong>COMPACT</strong> is a cosmetic inventory application to help</br>
+ keep track of all of your cosmetics in a virtual makeup bag.</br>
+    Just add an item and view it in your cosmetic bag! </h4>
 </div>
 
+<!-- SEE PRODUCT -->
+
+<ul id="cosmetic_products">
+</ul>
+
+<div id="cosmetic_product"></div>
+
 <!-- NEW PRODUCT -->
-<!-- <div id="new-product">
+<div id="new-product">
 Name: <input id="new-prod-name" type="text" name="name" value="" placeholder="Name of Product"></br>
 Brand: <input id="new-prod-brand" type="text" name="brand" value="" placeholder="Brand of Product"></br>
 Color: <input id="new-prod-color" type="text" name="color" value="" placeholder="Color of Product"></br>
 Price: <input id="new-prod-price" type="text" name="price" value="" placeholder="Price of Product"></br>
-Purchase Date: <input id="new-prod-date" type="text" name="date" value="" placeholder="Year/Day/Month"></br>
-Category: <input id="new-prod-cat" type="text" name="cat" value="" placeholder="Eyes, Lips, Face, Hair"></br>
+Purchase Date: <input id="new-prod-date" type="text" name="date" value="" placeholder="Month/Day/Year"></br>
+Category: <select id="new-prod-cat"></select></br>
 Image: <input id="new-prod-image" type="file" name="image" data-url='http:localhost:3000/cosmetic_products' value="" placeholder="Cosmetic Product Image"></br>
-<button id="new-prod-button">Make Cosmetic Product</button>
-</div> -->
+<button id="new-prod-button">Add Cosmetic Product</button>
+</div>
+
+<!-- ADD USER -->
+<div id="new-user">
+Name: <input id="new-user-name" type="text" name="name" value="" placeholder="Name"></br>
+Email: <input id="new-user-email" type="text" name="email" value="" placeholder="Email"></br>
+Password:<input id="new-user-pw" type="password" name="password" value="" placeholder="Enter Password"></br>
+Confirm Password:<input id="new-user-confirm-pw" type="password" name="confirm-password" value="" placeholder="Confirm Password"></br>
+<button id="new-user-button">Create My Account</button>
+</br>
+<div id="error-pw"></div>
+</div>
+
+
+<!-- LOGIN -->
+<div id="login">
+Name: <input id="login-user-name" type="text" name="name" value="" placeholder="Name"></br>
+Email: <input id="login-user-email" type="text" name="email" value="" placeholder="Email"></br>
+Password:<input id="login-user-pw" type="password" name="password" value="" placeholder="Enter Password"></br>
+<button id="login-button">Log In</button>
+</div>
 
 
 
+<!-- AUTHENTICATION -->
+
+<!-- <input id="email" type="text" value="" placeholder="email">
+ <input id="password" type="password" value="" placeholder="password">
+ <input id="get-token" type="button" value="Get Token">
+ <br>
+ <label for="token">Token:</label>
+ <input id="token" placeholder="empty">
+ <br>
+ <label for="id">Id:</label>
+ <input id="id" type="text" placeholder="">
+ <input id="get-by-id" type="button" value="Get By Id">
+ <input id="get-index" type="button" value="Get Index">
+ <br>
+ <label for="result">Result:</label>
+ <input id="result" placeholder="empty"> -->
+
+<!--  END OF AUTHENTICATION -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>

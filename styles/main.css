@@ -1,22 +1,26 @@
 /*header*/
-#mainheader{
+
+
+#brushheader{
   background-image: url("http://i.imgur.com/ofL3GvE.png");
   background-repeat: no-repeat;
   height: 281px;
   width: 508px;
   position: absolute;
   right: 0;
+  top:12%;
   background-size: cover;
+  z-index:1;
 }
 
-#banner{
+#compactheader{
 
-  background-image: url("http://i.imgur.com/cyzO7tM.png");
+  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-F0600GHHA/compact_logo.png");
   width: 510px;
   height: 130px;
   background-repeat: no-repeat;
   position: absolute;
-  left: calc(50% - 455px);
+  left: calc(50% - 255px);
   top: 190px;
 }
  #wrapper{
@@ -36,3 +40,41 @@ body {
 #new-product{
 clear:both;
 }
+
+#aboutapp{
+  margin-left:220px;
+  margin-bottom:50px;
+  font-family:arial;
+  color:#94989C;
+}
+
+#aboutapp h4{
+  margin-left:15%;
+  word-spacing:5px;
+  height:200px;
+  z-index: -1;
+}
+
+
+/*Hiding divs*/
+
+#aboutapp{
+  display:none;
+}
+
+#cosmetic_products{
+  display:none;
+}
+
+#new-product{
+  display:none;
+}
+
+#new-user{
+  display:none;
+}
+
+#login{
+  display:none;
+}
+
