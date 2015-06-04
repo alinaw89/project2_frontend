@@ -10,7 +10,6 @@
   right: 0;
   top:12%;
   background-size: cover;
-  z-index:1;
 }
 
 #compactheader{
@@ -52,7 +51,6 @@ clear:both;
   margin-left:15%;
   word-spacing:5px;
   height:200px;
-  z-index: -1;
 }
 
 
