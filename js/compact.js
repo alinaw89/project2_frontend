@@ -1,7 +1,8 @@
 // test run
 
 $(document).ready(function(){
-  getCategories();
+
+  toggle();
 
   // CLICK FUNCTION ON BUTTONS
 
@@ -27,7 +28,8 @@ $(document).ready(function(){
     $.ajax({
       url: 'http://localhost:3000/categories/' + categoryID,
       method: 'GET',
-      dataType: 'json'
+      dataType: 'json',
+      headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     })
     .done(function(category_data){
       $(".content").hide();
@@ -51,14 +53,17 @@ $(document).ready(function(){
   $('#show-all-products').on('click', function(){
     $.ajax({
       method: 'GET',
-      url: "http://localhost:3000/cosmetic_products"
+      url: "http://localhost:3000/cosmetic_products",
+      headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
       $(".content").hide();
-      $("#cosmetic_products").show();
+
+      $("#cosmetic_products").html('');
       cosmetic_product_data.forEach(function(cosmetic_product){
         $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
       });
+       $("#cosmetic_products").show();
     })
     .fail(function(){
       alert("fail to get products");
@@ -69,7 +74,8 @@ $(document).ready(function(){
    $("#cosmetic_products").on("click", function(event){
     $.ajax({
       method: 'GET',
-      url: "http://localhost:3000/cosmetic_products/" + event.target.id
+      url: "http://localhost:3000/cosmetic_products/" + event.target.id,
+      headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
       var html = "<dl> <dt>Name</dt><dd>" + cosmetic_product_data.name + "<dt>Brand</dt><dd>" + cosmetic_product_data.brand + "<dt>Color</dt><dd>" + cosmetic_product_data.color + "<dt>Price</dt><dd>" + cosmetic_product_data.price + "<dt>Purchase Date</dt><dd>" + cosmetic_product_data.purchase_date + "<dt>Category</dt><dd>" + cosmetic_product_data.category_name + "<dt>Image</dt><dd>" + '<img src="' + cosmetic_product_data.photo + '"/>';
@@ -96,7 +102,8 @@ $(document).ready(function(){
         processData: false,
         contentType: false,
         cache: false,
-        data: fd
+        data: fd,
+        headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
       }).done(function(){
         alert ("success");
       }).fail(function(){
@@ -136,19 +143,44 @@ $(document).ready(function(){
       };
       $.ajax({
         type: 'POST',
-        url: 'http:localhost:3000/login',
+        url: 'http://localhost:3000/login',
         dataType: "json",
         data: params
       })
       .done(function(data){
         $("#login").hide();
         renderUserGreeting(data);
+        // setting token to a non-empty string (correct value)
+        simpleStorage.set('token', data.token, {TTL: 43200000});
+        toggle();
+        getCategories();
         console.log("Successful login!");
       })
       .fail(function(error){
         console.log("Error in login " + error);
       });
     });
+
+
+
+
+    $("#logout").on("click", function(){
+      $.ajax({
+        method: 'DELETE',
+        url: "http://localhost:3000/logout",
+        headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
+      })
+      .done(function(){
+        console.log("logged out");
+      })
+      .fail(function(){
+        alert("Error in logging out");
+      }).always(function(){
+        simpleStorage.set('token', '');
+        toggle();
+      });
+    });
+
 
     var renderUserGreeting = function(data){
       $("#userDiv").html("Welcome, " + data.name);
@@ -223,7 +255,8 @@ $(document).ready(function(){
 var getCategories = function(){
   $.ajax({
     method: 'GET',
-    url: "http://localhost:3000/categories"
+    url: "http://localhost:3000/categories",
+    headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
   })
   .done(function(category_data){
     console.log(category_data);
@@ -240,6 +273,33 @@ var getCategories = function(){
   // selectDiv('login');
 
 };
+
+// FUNCTION THAT CHECKS TO SEE IF TOKEN IS PRESENT, TO SHOW THINGS, HIDE THINGS
+
+var toggle = function(){
+  if (simpleStorage.get('token')) {
+    $("#display-cosmetic").show();
+    $("#show-all-products").show();
+    $("#logout").show();
+    $("#user-login").hide();
+    $("#userDiv").show();
+  } else {
+    $("#display-cosmetic").hide();
+    $("#show-all-products").hide();
+    $("#logout").hide();
+    $("#user-login").show();
+    $("#userDiv").hide();
+
+  }
+};
+
+
+
+
+
+
+
+
 
 
 
