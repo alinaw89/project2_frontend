@@ -1,4 +1,10 @@
-// test run
+// PATH FOR HEROKU
+var baseURL = function(){
+  return "http://localhost:3000";
+  // return "http://heroku";
+};
+
+
 
 $(document).ready(function(){
 
@@ -26,7 +32,7 @@ $(document).ready(function(){
     var categoryID = event.target.dataset.categoryId;
 
     $.ajax({
-      url: 'http://localhost:3000/categories/' + categoryID,
+      url: baseURL() + '/categories/' + categoryID,
       method: 'GET',
       dataType: 'json',
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
@@ -49,11 +55,11 @@ $(document).ready(function(){
   });
 
 
-
+  // SHOW ALL COSMETIC PRODUCTS
   $('#show-all-products').on('click', function(){
     $.ajax({
       method: 'GET',
-      url: "http://localhost:3000/cosmetic_products",
+      url: baseURL() + "/cosmetic_products",
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
@@ -71,10 +77,11 @@ $(document).ready(function(){
 
    });
 
+  // RENDERING COSMETIC ITEM
    $("#cosmetic_products").on("click", function(event){
     $.ajax({
       method: 'GET',
-      url: "http://localhost:3000/cosmetic_products/" + event.target.id,
+      url: baseURL() + "/cosmetic_products/" + event.target.id,
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
@@ -86,6 +93,7 @@ $(document).ready(function(){
     });
   });
 
+   // CREATING NEW COSMETIC ITEM
    $("#new-prod-button").on("click", function(event){
       var fd = new FormData();
       fd.append('name', $("#new-prod-name").val());
@@ -98,19 +106,21 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'POST',
-        url: "http://localhost:3000/cosmetic_products",
+        url: baseURL() + "/cosmetic_products",
         processData: false,
         contentType: false,
         cache: false,
         data: fd,
         headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
       }).done(function(){
-        alert ("success");
+        console.log("Created new product");
       }).fail(function(){
-        alert ("fail");
+        console.log("Failed to create product");
       });
    });
 
+
+    // NEW USER BUTTON
     $("#new-user-button").on("click", function(event){
       var newUser = {
         name: $("#new-user-name").val(),
@@ -120,7 +130,7 @@ $(document).ready(function(){
       };
       $.ajax({
         type: 'POST',
-        url: 'http:localhost:3000/register',
+        url: baseURL() + '/register',
         data: {credentials: newUser}
       })
       .done(function(response){
@@ -132,6 +142,8 @@ $(document).ready(function(){
       });
   });
 
+
+    // LOGIN BUTTON
     $("#login-button").on("click", function(){
       var email = $("#login-user-email").val();
       var password = $("#login-user-pw").val();
@@ -143,7 +155,7 @@ $(document).ready(function(){
       };
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:3000/login',
+        url: baseURL() + '/login',
         dataType: "json",
         data: params
       })
@@ -163,11 +175,11 @@ $(document).ready(function(){
 
 
 
-
+    // LOGOUT BUTTON
     $("#logout").on("click", function(){
       $.ajax({
         method: 'DELETE',
-        url: "http://localhost:3000/logout",
+        url: baseURL() + "/logout",
         headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
       })
       .done(function(){
@@ -182,80 +194,20 @@ $(document).ready(function(){
     });
 
 
+
+    // USER GREETING
     var renderUserGreeting = function(data){
       $("#userDiv").html("Welcome, " + data.name);
     };
 
-// CHARLTON NEW USER
-  //  $("#new-user-button").on("click", function(event){
-  //   if ($("#new-user-pw").val() !== $("#new-user-confirm-pw").val()){
-  //     $("#error-pw").html("Passwords do not match");
-  //   } else {
-  //    var user = {
-  //     name: $("#new-user-name").val(),
-  //     email: $("#new-user-email").val(),
-  //     password: $("#new-user-pw").val(),
-  //     password_confirmation: $("#new-user-confirm-pw").val()
-  //   };
-  //   $.ajax({
-  //     type: 'POST',
-  //     url: "http://localhost:3000/register",
-  //     data: {credentials: user}
-  //   }).done(function(response){
-  //     if (response.error){
-  //       $("#error-pw").html(response.error);
-  //     }else{
-  //       //TO DO: HIDE PASSWORD DIV, SHOW MAIN DIV
-  //       // selectDiv('cosmetic_products');
-  //       $("#new-user").hide();
-  //     }
-  //   }).fail(function(){
-  //     $("#error-pw").html("Server error occured. Try again later");
-  //   });
-  //   }
-  // });
-// END CHARLTON NEW USER
-
-
- //  $("#login-button").on("click", function(){
-
- //  //    $.ajax('http://localhost:3000/login',{
- //  //      contentType: 'application/json',
- //  //      processData: false,
- //  //      data: JSON.stringify({
- //  //       credentials: {
- //  //         email: $('#login-user-email').val(),
- //  //         password: $('#login-user-pw').val()
- //  //       }
- //  //     }),
- //  //      dataType: "json",
- //  //      method: "POST"
- //  //    }).done(function(data, textStatus) {
- //  //     $('#token').val(textStatus == 'nocontent' ? 'login failed' : data['token']);
- //  //     console.log(data);
- //  //   }).fail(function(jqxhr, textStatus, errorThrown){
- //  //     console.log(textStatus);
- //  //   });
- //  // });
-
- });
-
-// var selectDiv = function(divName) {
-//   var allDivs = ['aboutapp', 'cosmetic_products', 'new-product', 'new-user', 'login'];
-//   allDivs.forEach(function(div){
-//     $('#' + div).hide();
-//     console.log("hiding " + div);
-//   });
-//   $('#' + divName).show();
-//   console.log("showing " + divName);
-// };
+  });
 
 
 
 var getCategories = function(){
   $.ajax({
     method: 'GET',
-    url: "http://localhost:3000/categories",
+    url: baseURL() + "/categories",
     headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
   })
   .done(function(category_data){
@@ -269,13 +221,9 @@ var getCategories = function(){
     alert("Failed getting cosmetic categories");
   });
 
-  // hide all the divs and show this one
-  // selectDiv('login');
-
 };
 
 // FUNCTION THAT CHECKS TO SEE IF TOKEN IS PRESENT, TO SHOW THINGS, HIDE THINGS
-
 var toggle = function(){
   if (simpleStorage.get('token')) {
     $("#display-cosmetic").show();
@@ -307,60 +255,3 @@ var toggle = function(){
 // curl -X POST -d "cosmetic_product[name]=lipstick 2&cosmetic_product[brand]=nars&cosmetic_product[color]=black&cosmetic_product[price]=20" http://localhost:3000/cosmetic_products
 
 
-
-
-// $('#new-prod-button').click(function(){
-//   var cosmetic_product = {
-//   name: $("#new-prod-name").val(),
-//   brand: $("#new-prod-brand").val(),
-//   color: $("#new-prod-color").val(),
-//   price: parseFloat($("#new-prod-price").val()),
-//   purchase_date: $("#new-prod-date").val(),
-//   category: $("#new-prod-cat").val()};
-//   // image: $("#new-prod-image").val()};
-
-//   $.ajax({
-//     type: 'POST',
-//     url: "http://localhost:3000/cosmetic_products",
-//     data: {cosmetic_product: cosmetic_product}
-//     }).done(function(){
-//     alert ("success");
-//     }).fail(function(){
-//     alert ("failure");
-//   });
-
-// });
-
-
-
-//AUTHENTICATION
-
-
-
-
-
-//   $('#get-index').on('click', function(){
-//     $.ajax('http://localhost:3000/hello',{
-//       dataType: "json",
-//       method: "GET",
-//       headers: { Authorization: 'Token token=' + $("#token").val() }
-//     }).done(function(data, textStatus) {
-//       $('#result').val(JSON.stringify(data));
-//       console.log(data);
-//     }).fail(function(jqxhr, textStatus, errorThrown){
-//       console.log(textStatus);
-//     });
-//   });
-//   $('#get-by-id').on('click', function(){
-//     $.ajax('http://localhost:3000/hello/' +
-//       $('#id').val(), {
-//       dataType: "json",
-//       method: "GET",
-//       headers: { Authorization: 'Token token=' + $("#token").val() }
-//     }).done(function(data, textStatus) {
-//       $('#result').val(JSON.stringify(data));
-//       console.log(data);
-//     }).fail(function(jqxhr, textStatus, errorThrown){
-//       console.log(textStatus);
-
-// });
