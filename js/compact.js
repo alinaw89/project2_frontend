@@ -6,14 +6,17 @@ $(document).ready(function(){
   // CLICK FUNCTION ON BUTTONS
 
   $("#register-user").on('click', function(){
+    $(".content").hide();
     $("#new-user").show();
   });
 
   $("#user-login").on('click', function(){
+    $(".content").hide();
     $("#login").show();
   });
 
   $("#display-cosmetic").on('click', function(){
+    $(".content").hide();
     $("#new-product").show();
   });
 
@@ -27,6 +30,8 @@ $(document).ready(function(){
       dataType: 'json'
     })
     .done(function(category_data){
+      $(".content").hide();
+      $("#cosmetic_products").show();
       $("#cosmetic_products").html('');
 
        category_data.cosmetic_products.forEach(function(cosmetic_product){
@@ -34,13 +39,14 @@ $(document).ready(function(){
        });
     });
 
-
-    //$("#cosmetic_products").show();
   });
+
 
   $("#about-compact").on('click', function(){
     $("#aboutapp").show();
   });
+
+
 
   $('#show-all-products').on('click', function(){
     $.ajax({
@@ -48,6 +54,8 @@ $(document).ready(function(){
       url: "http://localhost:3000/cosmetic_products"
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
+      $(".content").hide();
+      $("#cosmetic_products").show();
       cosmetic_product_data.forEach(function(cosmetic_product){
         $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
       });
@@ -96,46 +104,88 @@ $(document).ready(function(){
       });
    });
 
-   $("#new-user-button").on("click", function(event){
-    if ($("#new-user-pw").val() !== $("#new-user-confirm-pw").val()){
-      $("#error-pw").html("Passwords do not match");
-    } else {
-     var user = {
-      name: $("#new-user-name").val(),
-      email: $("#new-user-email").val(),
-      password: $("#new-user-pw").val(),
-      password_confirmation: $("#new-user-confirm-pw").val()
-    };
-    $.ajax({
-      type: 'POST',
-      url: "http://localhost:3000/register",
-      data: {credentials: user}
-    }).done(function(response){
-      if (response.error){
-        $("#error-pw").html(response.error);
-      }else{
-        //TO DO: HIDE PASSWORD DIV, SHOW MAIN DIV
-        // selectDiv('cosmetic_products');
+    $("#new-user-button").on("click", function(event){
+      var newUser = {
+        name: $("#new-user-name").val(),
+        email: $("#new-user-email").val(),
+        password: $("#new-user-pw").val(),
+        password_confirmation: $("#new-user-confirm-pw").val()
+      };
+      $.ajax({
+        type: 'POST',
+        url: 'http:localhost:3000/register',
+        data: {credentials: newUser}
+      })
+      .done(function(response){
         $("#new-user").hide();
-      }
-    }).fail(function(){
-      $("#error-pw").html("Server error occured. Try again later");
-    });
-    }
+        console.log("Your account has been created!")
+      })
+      .fail(function(error){
+        console.log("Error in creating new user " + error);
+      });
   });
 
+    $("#login-button").on("click", function(){
+      var email = $("#login-user-email").val();
+      var password = $("#login-user-pw").val();
+      var params = {
+        credentials: {
+          email: email,
+          password: password
+        }
+      };
+      $.ajax({
+        type: 'POST',
+        url: 'http:localhost:3000/login',
+        dataType: "json",
+        data: params
+      })
+      .done(function(data){
+        $("#login").hide();
+        renderUserGreeting(data);
+        console.log("Successful login!");
+      })
+      .fail(function(error){
+        console.log("Error in login " + error);
+      });
+    });
 
+    var renderUserGreeting = function(data){
+      $("#userDiv").html("Welcome, " + data.name);
+    };
 
-
-
-
-
-
+// CHARLTON NEW USER
+  //  $("#new-user-button").on("click", function(event){
+  //   if ($("#new-user-pw").val() !== $("#new-user-confirm-pw").val()){
+  //     $("#error-pw").html("Passwords do not match");
+  //   } else {
+  //    var user = {
+  //     name: $("#new-user-name").val(),
+  //     email: $("#new-user-email").val(),
+  //     password: $("#new-user-pw").val(),
+  //     password_confirmation: $("#new-user-confirm-pw").val()
+  //   };
+  //   $.ajax({
+  //     type: 'POST',
+  //     url: "http://localhost:3000/register",
+  //     data: {credentials: user}
+  //   }).done(function(response){
+  //     if (response.error){
+  //       $("#error-pw").html(response.error);
+  //     }else{
+  //       //TO DO: HIDE PASSWORD DIV, SHOW MAIN DIV
+  //       // selectDiv('cosmetic_products');
+  //       $("#new-user").hide();
+  //     }
+  //   }).fail(function(){
+  //     $("#error-pw").html("Server error occured. Try again later");
+  //   });
+  //   }
+  // });
+// END CHARLTON NEW USER
 
 
  //  $("#login-button").on("click", function(){
-
-
 
  //  //    $.ajax('http://localhost:3000/login',{
  //  //      contentType: 'application/json',
@@ -155,8 +205,6 @@ $(document).ready(function(){
  //  //     console.log(textStatus);
  //  //   });
  //  // });
-
-
 
  });
 
