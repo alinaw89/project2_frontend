@@ -60,9 +60,6 @@ clear:both;
   display:none;
 }
 
-#cosmetic_products{
-  display:none;
-}
 
 #new-product{
   display:none;
@@ -73,6 +70,5 @@ clear:both;
 }
 
 #login{
-  display:none;
+ display:none;
 }
-

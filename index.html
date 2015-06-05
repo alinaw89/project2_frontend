@@ -28,22 +28,22 @@
         <li class="active"><a id="about-compact" href="#">About Compact<span class="sr-only">(current)</span></a></li>
         <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
         <li class="dropdown">
-          <a id="display-cosmetic-bag" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Eyes</a></li>
-            <li><a href="#">Lips</a></li>
-            <li><a href="#">Face</a></li>
-            <li><a href="#">Hair</a></li>
-            <li><a href='#'>Body</a></li>
+          <a  id='show-all-products' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
+          <ul id="display-cosmetic-bag" class="dropdown-menu" role="menu">
+            <li><a href="#" data-category-id='1'>Eyes</a></li>
+            <li><a href="#" data-category-id='2'>Lips</a></li>
+            <li><a href="#" data-category-id='3'>Face</a></li>
+            <li><a href="#" data-category-id='4'>Hair</a></li>
+            <li><a href='#' data-category-id='5'>Body</a></li>
             <!-- <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>
             <li><a href="#">One more separated link</a></li> -->
           </ul>
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Compact User<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a id="register-user" href="#">Create New User</a></li>
+            <li><a id="register-user"  href="#">Create New User</a></li>
             <li><a id="user-login" href="#">Log In</a></li>
             <li><a id="edit-profile" href="#">Edit Profile</a></li>
             <li><a id="logout" href="#">Logout</a></li>
@@ -52,32 +52,41 @@
       </ul>
     </div>
     </nav>
+    <!-- END NAVIGATION BAR -->
+
+
 
 <!-- HEADER -->
 <div id="wrapper">
   <div id="brushheader"></div>
   <div id="compactheader"></div>
 </div>
+<!-- END HEADER -->
 
-<!-- <div class="container-fluid">
-<div class="row">
-    <div id="title" class="col-md-4"></div>
-</div>
-</div> -->
 
-<!-- ABOUT -->
+
+
+<!-- ABOUT COMPACT -->
 <div id="aboutapp">
 <h4><strong>COMPACT</strong> is a cosmetic inventory application to help</br>
  keep track of all of your cosmetics in a virtual makeup bag.</br>
     Just add an item and view it in your cosmetic bag! </h4>
 </div>
+<!-- END ABOUT COMPACT-->
 
-<!-- SEE PRODUCT -->
 
+
+
+<!-- SEE ALL COSMETIC PRODUCTS -->
 <ul id="cosmetic_products">
 </ul>
 
 <div id="cosmetic_product"></div>
+<!-- END ALL COSMETIC PRODUCTS -->
+
+
+
+
 
 <!-- NEW PRODUCT -->
 <div id="new-product">
@@ -90,8 +99,13 @@ Category: <select id="new-prod-cat"></select></br>
 Image: <input id="new-prod-image" type="file" name="image" data-url='http:localhost:3000/cosmetic_products' value="" placeholder="Cosmetic Product Image"></br>
 <button id="new-prod-button">Add Cosmetic Product</button>
 </div>
+<!-- END NEW PRODUCT -->
 
-<!-- ADD USER -->
+
+
+
+
+<!-- NEW USER -->
 <div id="new-user">
 Name: <input id="new-user-name" type="text" name="name" value="" placeholder="Name"></br>
 Email: <input id="new-user-email" type="text" name="email" value="" placeholder="Email"></br>
@@ -101,15 +115,65 @@ Confirm Password:<input id="new-user-confirm-pw" type="password" name="confirm-p
 </br>
 <div id="error-pw"></div>
 </div>
+<!-- END NEW USER -->
+
+
+
 
 
 <!-- LOGIN -->
 <div id="login">
-Name: <input id="login-user-name" type="text" name="name" value="" placeholder="Name"></br>
 Email: <input id="login-user-email" type="text" name="email" value="" placeholder="Email"></br>
 Password:<input id="login-user-pw" type="password" name="password" value="" placeholder="Enter Password"></br>
 <button id="login-button">Log In</button>
 </div>
+<!-- END OF LOGIN -->
+
+
+
+
+<!-- MODAL NEW USER -->
+<!-- <div class="modal fade" id="new-user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">New User</h4>
+      </div>
+      <div class="modal-body">
+        <input id="new-user-name" type="text" name="name" value="" placeholder="Name">
+        <input id="new-user-email" type="text" name="email" value="" placeholder="Email">
+        <input id="new-user-pw" type="password" name="password" value="" placeholder="Enter Password">
+        <input id="new-user-confirm-pw" type="password" name="confirm-password" value="" placeholder="Confirm Password"
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Create User</button>
+      </div> -->
+   <!--  </div>
+  </div>
+</div> -->
+
+
+<!-- MODAL LOGIN -->
+<!-- <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+        <input id="login-user-email" type="text" name="email" value="" placeholder="Email">
+        <input id="login-user-pw" type="password" name="password" value="" placeholder="Enter Password">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+  </div>
+</div>
+ </div> -->
 
 
 
@@ -132,7 +196,9 @@ Password:<input id="login-user-pw" type="password" name="password" value="" plac
 
 <!--  END OF AUTHENTICATION -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
   <script src="bower_components/jquery-file-upload/js/jquery.fileupload.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>

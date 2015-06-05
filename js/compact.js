@@ -17,26 +17,46 @@ $(document).ready(function(){
     $("#new-product").show();
   });
 
-  $("#display-cosmetic-bag").on('click', function(){
-    $("#cosmetic_products").show();
+
+  $("#display-cosmetic-bag").on('click', function(event){
+    var categoryID = event.target.dataset.categoryId;
+
+    $.ajax({
+      url: 'http://localhost:3000/categories/' + categoryID,
+      method: 'GET',
+      dataType: 'json'
+    })
+    .done(function(category_data){
+      $("#cosmetic_products").html('');
+
+       category_data.cosmetic_products.forEach(function(cosmetic_product){
+         $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
+       });
+    });
+
+
+    //$("#cosmetic_products").show();
   });
 
   $("#about-compact").on('click', function(){
     $("#aboutapp").show();
   });
 
-  $.ajax({
-    method: 'GET',
-    url: "http://localhost:3000/cosmetic_products"
-  }).done(function(cosmetic_product_data){
-    console.log(cosmetic_product_data);
-    cosmetic_product_data.forEach(function(cosmetic_product){
-      $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
+  $('#show-all-products').on('click', function(){
+    $.ajax({
+      method: 'GET',
+      url: "http://localhost:3000/cosmetic_products"
+    }).done(function(cosmetic_product_data){
+      console.log(cosmetic_product_data);
+      cosmetic_product_data.forEach(function(cosmetic_product){
+        $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
+      });
+    })
+    .fail(function(){
+      alert("fail to get products");
     });
-  })
-  .fail(function(){
-    alert("fail to get products");
-  });
+
+   });
 
    $("#cosmetic_products").on("click", function(event){
     $.ajax({
@@ -95,7 +115,8 @@ $(document).ready(function(){
         $("#error-pw").html(response.error);
       }else{
         //TO DO: HIDE PASSWORD DIV, SHOW MAIN DIV
-        selectDiv('cosmetic_products');
+        // selectDiv('cosmetic_products');
+        $("#new-user").hide();
       }
     }).fail(function(){
       $("#error-pw").html("Server error occured. Try again later");
@@ -104,26 +125,38 @@ $(document).ready(function(){
   });
 
 
- //  $('#login').on('click', function(){
- //    $.ajax('http://localhost:3000/login',{
- //     contentType: 'application/json',
- //     processData: false,
- //     data: JSON.stringify({
- //       credentials: {
- //         name: $('#new-user-name'),
- //         email: $('#new-user-email').val(),
- //         password: $('#new-user-pw').val()
- //       }
- //     }),
- //     dataType: "json",
- //     method: "POST"
- //   }).done(function(data, textStatus) {
- //     $('#token').val(textStatus == 'nocontent' ? 'login failed' : data['token']);
- //     console.log(data);
- //   }).fail(function(jqxhr, textStatus, errorThrown){
- //     console.log(textStatus);
- //   });
- // });
+
+
+
+
+
+
+
+
+ //  $("#login-button").on("click", function(){
+
+
+
+ //  //    $.ajax('http://localhost:3000/login',{
+ //  //      contentType: 'application/json',
+ //  //      processData: false,
+ //  //      data: JSON.stringify({
+ //  //       credentials: {
+ //  //         email: $('#login-user-email').val(),
+ //  //         password: $('#login-user-pw').val()
+ //  //       }
+ //  //     }),
+ //  //      dataType: "json",
+ //  //      method: "POST"
+ //  //    }).done(function(data, textStatus) {
+ //  //     $('#token').val(textStatus == 'nocontent' ? 'login failed' : data['token']);
+ //  //     console.log(data);
+ //  //   }).fail(function(jqxhr, textStatus, errorThrown){
+ //  //     console.log(textStatus);
+ //  //   });
+ //  // });
+
+
 
  });
 
