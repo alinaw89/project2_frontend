@@ -43,11 +43,13 @@ $(document).ready(function(){
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     })
     .done(function(category_data){
+
       $(".content").hide();
       $("#cosmetic_products").show();
       $("#cosmetic_products").html('');
 
-       category_data.cosmetic_products.forEach(function(cosmetic_product){
+       // category_data.cosmetic_products.forEach(function(cosmetic_product){ UNHIDE IF NEED BE
+          category_data.forEach(function(cosmetic_product){
          $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
        });
     });
