@@ -27,7 +27,12 @@ $(document).ready(function(){
     $("#new-product").show();
   });
 
+  $("#logout").on('click', function(){
+    $(".content").hide();
+  });
 
+
+  // SHOW ALL PRODUCTS
   $("#display-cosmetic-bag").on('click', function(event){
     var categoryID = event.target.dataset.categoryId;
 
@@ -50,9 +55,10 @@ $(document).ready(function(){
   });
 
 
-  $("#about-compact").on('click', function(){
-    $("#aboutapp").show();
-  });
+  // // ABOUT COMPACT BLURB
+  // $("#about-compact").on('click', function(){
+  //   $("#aboutapp").show();
+  // });
 
 
   // SHOW ALL COSMETIC PRODUCTS
@@ -74,8 +80,8 @@ $(document).ready(function(){
     .fail(function(){
       alert("fail to get products");
     });
-
    });
+
 
   // RENDERING COSMETIC ITEM
    $("#cosmetic_products").on("click", function(event){
@@ -92,6 +98,7 @@ $(document).ready(function(){
       alert("Failed to load products");
     });
   });
+
 
    // CREATING NEW COSMETIC ITEM
    $("#new-prod-button").on("click", function(event){
@@ -231,13 +238,14 @@ var toggle = function(){
     $("#logout").show();
     $("#user-login").hide();
     $("#userDiv").show();
+    $("#aboutapp").hide();
   } else {
     $("#display-cosmetic").hide();
     $("#show-all-products").hide();
     $("#logout").hide();
     $("#user-login").show();
     $("#userDiv").hide();
-
+    $("#aboutapp").show();
   }
 };
 

@@ -1,5 +1,11 @@
 /*header*/
 
+#navbartrans{
+  background:rgba(33,33,33,1);
+  background:linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background:-webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+}
 
 #brushheader{
   background-image: url("http://i.imgur.com/ofL3GvE.png");
@@ -26,38 +32,46 @@
   height: 320px;
  }
 
-img{
+img {
   margin-top:-230px;
   margin-left:290px;
 }
+
+
 /*body*/
 body {
   width:100%;
   background-color: #F2F1ED;
+  background-image: url("http://www.berjeinc.com/images/background_cosmetics.jpg");
+  background-repeat: no-repeat;
 }
 
 #new-product{
-clear:both;
+  clear:both;
 }
 
 #aboutapp{
-  margin-left:220px;
+
+  margin-left:15%;
   margin-bottom:50px;
   font-family:arial;
-  color:#94989C;
+  color:black;
+  margin-top:2%;
+  width:80%;
 }
 
 #aboutapp h4{
-  margin-left:15%;
+  font-weight:bold;
+  margin-left:23%;
   word-spacing:5px;
   height:200px;
+  line-height:200%;
 }
-
 
 /*Hiding divs*/
 
 #aboutapp{
-  display:none;
+ /* display:none;*/
 }
 
 
