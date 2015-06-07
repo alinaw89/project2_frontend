@@ -66,12 +66,20 @@
 
 
 
+<!-- ABOUT COMPACT -->
+<div id="aboutapp">
+<h4>An inventory application
+ to help keep track </br> of your makeup in a virtual cosmetic bag.</h4>
+</div>
+<!-- END ABOUT COMPACT-->
+
+
 <!-- NEW USER -->
 <div class="content" id="new-user">
-Name: <input id="new-user-name" type="text" name="name" value="" placeholder="Name"></br>
-Email: <input id="new-user-email" type="text" name="email" value="" placeholder="Email"></br>
-Password:<input id="new-user-pw" type="password" name="password" value="" placeholder="Enter Password"></br>
-Confirm Password:<input id="new-user-confirm-pw" type="password" name="confirm-password" value="" placeholder="Confirm Password"></br>
+Enter Name: <span id="name"><input class="user" id="new-user-name" type="text" name="name" value="" placeholder="Name"></span></br>
+Enter Email: <span id="email"><input class="user" id="new-user-email" type="text" name="email" value="" placeholder="Email"></span></br>
+Enter Password:<span id="pw"><input class="user" id="new-user-pw" type="password" name="password" value="" placeholder="Enter Password"></span></br>
+Confirm Password:<span id="cpw"><input class="user" id="new-user-confirm-pw" type="password" name="confirm-password" value="" placeholder="Confirm Password"></span></br>
 <button id="new-user-button">Create My Account</button>
 </br>
 <div id="error-pw"></div>
@@ -81,40 +89,30 @@ Confirm Password:<input id="new-user-confirm-pw" type="password" name="confirm-p
 
 
 
-
 <!-- LOGIN -->
 <div class="content" id="login">
-Email: <input id="login-user-email" type="text" name="email" value="" placeholder="Email"></br>
-Password:<input id="login-user-pw" type="password" name="password" value="" placeholder="Enter Password"></br>
+Email: <input class="user" id="login-user-email" type="text" name="email" value="" placeholder="Email"></br></br>
+Password:<input class="user" id="login-user-pw" type="password" name="password" value="" placeholder="Enter Password"></br>
 <button id="login-button">Log In</button>
 </div>
 </br>
-<div id="userDiv">
-</div>
+<div id="userDiv"></div>
 <!-- END OF LOGIN -->
-
-
-
-<!-- ABOUT COMPACT -->
-<div id="aboutapp">
-<h4>An inventory application
- to help keep track </br> of your makeup in a virtual cosmetic bag.</h4>
-</div>
-<!-- END ABOUT COMPACT-->
-
 
 
 
 
 <!-- ADD PRODUCT -->
 <div class="content" id="new-product">
-Name: <input id="new-prod-name" type="text" name="name" value="" placeholder="Name of Product"></br>
-Brand: <input id="new-prod-brand" type="text" name="brand" value="" placeholder="Brand of Product"></br>
-Color: <input id="new-prod-color" type="text" name="color" value="" placeholder="Color of Product"></br>
-Price: <input id="new-prod-price" type="text" name="price" value="" placeholder="Price of Product"></br>
-Purchase Date: <input id="new-prod-date" type="text" name="date" value="" placeholder="Month/Day/Year"></br>
-Category: <select id="new-prod-cat"></select></br>
-Image: <input id="new-prod-image" type="file" name="image" data-url='http:localhost:3000/cosmetic_products' value="" placeholder="Cosmetic Product Image"></br>
+</br>
+<h3>Add Cosmetic Item</h3></br>
+Product Name: <span id="prodname"><input class="user" id="new-prod-name" type="text" name="name" value="" placeholder="Name of Product"></span></br>
+Product Brand: <span id="prodbrand"><input class="user" id="new-prod-brand" type="text" name="brand" value="" placeholder="Brand of Product"></span></br>
+Product Color: <span id="prodcolor"><input class="user" id="new-prod-color" type="text" name="color" value="" placeholder="Color of Product"></span></br>
+Product Price: <span id="prodprice"><input class="user" id="new-prod-price" type="text" name="price" value="" placeholder="Price of Product"></span></br>
+Purchase Date: <span id="proddate"><input class="user" id="new-prod-date" type="text" name="date" value="" placeholder="Month/Day/Year"></span></br>
+Product Category: <span id="prodcat"><select class="user" id="new-prod-cat"></select></span></br></br>
+Product Image: <span id="prodimage"><input class="user" id="new-prod-image" type="file" name="image" data-url='http:localhost:3000/cosmetic_products' value="" placeholder="Cosmetic Product Image"></span>
 <button id="new-prod-button">Add Cosmetic Product</button>
 </div>
 <!-- END NEW PRODUCT -->
@@ -122,6 +120,7 @@ Image: <input id="new-prod-image" type="file" name="image" data-url='http:localh
 
 
 <!-- SEE ALL COSMETIC PRODUCTS -->
+<div id="cosbag"><h3>Cosmetic Bag</h3></div></br></br></br>
 <ul class="content"  id="cosmetic_products">
 </ul>
 
@@ -156,7 +155,7 @@ Image: <input id="new-prod-image" type="file" name="image" data-url='http:localh
 
 
 <!-- MODAL LOGIN -->
-<!-- <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -173,7 +172,7 @@ Image: <input id="new-prod-image" type="file" name="image" data-url='http:localh
       </div>
   </div>
 </div>
- </div> -->
+ </div>
 
 
 

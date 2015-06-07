@@ -1,4 +1,4 @@
-/*header*/
+/*HEADER*/
 
 #navbartrans{
   background:rgba(33,33,33,1);
@@ -38,7 +38,7 @@ img {
 }
 
 
-/*body*/
+/*BODY*/
 body {
   width:100%;
   background-color: #F2F1ED;
@@ -68,11 +68,6 @@ body {
   line-height:200%;
 }
 
-/*Hiding divs*/
-
-#aboutapp{
- /* display:none;*/
-}
 
 
 #new-product{
@@ -83,6 +78,142 @@ body {
   display:none;
 }
 
+
+
+/*LOGIN*/
 #login{
  display:none;
+ font-size:16px;
+ margin-left:35%;
+ margin-top:-10%;
+}
+
+.user{
+  border-radius:50px;
+  padding:10px;
+}
+
+#login-user-email{
+  margin-left:4%;
+}
+
+#login-user-pw{
+  margin-left:1%;
+}
+
+#login-button{
+  margin-top:25px;
+  margin-left:15%;
+  border-radius:10px;
+}
+
+/*NEW USER*/
+#new-user{
+  margin-left:35%;
+  margin-top:-10%;
+  font-size:16px;
+}
+
+.content input{
+  margin-left:50px;
+}
+
+#name{
+  margin-left:4%;
+}
+
+#email{
+  margin-left:4.3%;
+}
+
+#pw{
+  margin-left:1.8%;
+}
+
+#cpw{
+  margin-left:.03%;
+}
+
+#new-user-button{
+  margin-top:25px;
+  margin-left:13%;
+  border-radius:10px;
+}
+
+/*WELCOME MESSAGE*/
+#userDiv{
+  margin-left:40%;
+  font-size:30px;
+}
+
+/*ADD COSMETIC ITEM*/
+#new-product{
+  margin-left:35%;
+  margin-top:2%;
+  font-size:16px;
+}
+
+#new-prod-button{
+  margin-top:25px;
+  margin-left:10%;
+  border-radius:10px;
+}
+
+#prodname{
+  margin-left:5px;
+}
+
+#prodbrand{
+  margin-left:5px;
+}
+
+#prodcolor{
+  margin-left:12px;
+}
+
+#prodprice{
+  margin-left:14px;
+}
+
+#proddate{
+  margin-left:11px;
+}
+
+#prodcat{
+  margin-left:12%;
+}
+
+.select{
+  width:10%;
+}
+
+#prodimage{
+  margin-left:5px;
+}
+
+.content h3{
+  margin-left:7%;
+}
+
+
+/*VIEW PRODUCTS*/
+#cosbag{
+  margin-left:42%;
+}
+
+#cosmetic_products{
+  margin-left: 24%;
+  float:left;
+  font-weight:bold;
+  font-size:16px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+/*VIEW SINGLE PRODUCT*/
+#cosmetic_product{
+  float:left;
+  margin-left:50px;
 }

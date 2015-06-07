@@ -32,6 +32,7 @@ $(document).ready(function(){
   });
 
 
+
   // SHOW ALL PRODUCTS
   $("#display-cosmetic-bag").on('click', function(event){
     var categoryID = event.target.dataset.categoryId;
@@ -122,6 +123,7 @@ $(document).ready(function(){
         data: fd,
         headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
       }).done(function(){
+        $("#new-product").html("Product saved to cosmetic bag")
         console.log("Created new product");
       }).fail(function(){
         console.log("Failed to create product");
@@ -241,6 +243,8 @@ var toggle = function(){
     $("#user-login").hide();
     $("#userDiv").show();
     $("#aboutapp").hide();
+    $("#cosmetic_product").show();
+    $("#cosmetic_products").show();
   } else {
     $("#display-cosmetic").hide();
     $("#show-all-products").hide();
@@ -248,6 +252,9 @@ var toggle = function(){
     $("#user-login").show();
     $("#userDiv").hide();
     $("#aboutapp").show();
+    $("#cosmetic_product").hide();
+    $("#cosmetic_products").hide();
+    $("#cosbag").hide();
   }
 };
 
