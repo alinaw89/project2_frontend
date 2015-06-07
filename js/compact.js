@@ -10,8 +10,7 @@ $(document).ready(function(){
 
   toggle();
 
-  // CLICK FUNCTION ON BUTTONS
-
+  // CLICK FUNCTION ON BUTTONS TO HIDE/SHOW CONTENT
   $("#register-user").on('click', function(){
     $(".content").hide();
     $("#new-user").show();
@@ -33,7 +32,7 @@ $(document).ready(function(){
 
 
 
-  // SHOW ALL PRODUCTS
+  // SHOW ALL COSMETIC PRODUCTS
   $("#display-cosmetic-bag").on('click', function(event){
     var categoryID = event.target.dataset.categoryId;
 
@@ -42,19 +41,14 @@ $(document).ready(function(){
       method: 'GET',
       dataType: 'json',
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
-    })
-    .done(function(category_data){
-
+    }).done(function(category_data){
       $(".content").hide();
       $("#cosmetic_products").show();
       $("#cosmetic_products").html('');
-
-       // category_data.cosmetic_products.forEach(function(cosmetic_product){ UNHIDE IF NEED BE
-          category_data.forEach(function(cosmetic_product){
-         $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
-       });
-    });
-
+      category_data.forEach(function(cosmetic_product){
+      $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
+        });
+      });
   });
 
 
@@ -64,8 +58,7 @@ $(document).ready(function(){
   // });
 
 
-  // SHOW ALL COSMETIC PRODUCTS
-  $('#show-all-products').on('click', function(){
+  var showAllProducts = function(){
     $.ajax({
       method: 'GET',
       url: baseURL() + "/cosmetic_products",
@@ -73,40 +66,43 @@ $(document).ready(function(){
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
       $(".content").hide();
-
       $("#cosmetic_products").html('');
       cosmetic_product_data.forEach(function(cosmetic_product){
-        $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
-      });
-       $("#cosmetic_products").show();
-    })
-    .fail(function(){
+      $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
+    });
+      $("#cosmetic_products").show();
+    }).fail(function(){
       alert("fail to get products");
     });
-   });
+  };
+
+  // SHOW ALL COSMETIC PRODUCTS
+  $('#show-all-products').on('click', showAllProducts);
+
 
 
    // DELETING COSMETIC ITEM
-   var wrapCosmetic = function(){
-   $("#deleteprod").on('click', function(event){
-    var answer = confirm("Are you sure?");
-    if (answer){
-       $.ajax({
-      method: 'DELETE',
-      url: baseURL() + "/cosmetic_products/" + $('#deleteprod').data('product-id'),
-      headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
-    }).done(function(cosmetic_product_data){
-
+  var wrapCosmetic = function(){
+    $("#deleteprod").on('click', function(event){
+      var answer = confirm("Are you sure?");
+      if (answer){
+        $.ajax({
+          method: 'DELETE',
+          url: baseURL() + "/cosmetic_products/" + $('#deleteprod').data('product-id'),
+          headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
+        }).done(function(cosmetic_product_data){
+          $("#cosmetic_product").html('');
+          showAllProducts();
+          console.log("Product successfully deleted");
+        });
+      } else {
+          console.log("Will not delete product");
+      };
     });
-    } else{
-      console.log("Will not delete product");
-    };
-
-   });
-};
+  };
 
   // RENDERING COSMETIC ITEM
-   $("#cosmetic_products").on("click", function(event){
+  $("#cosmetic_products").on("click", function(event){
     $.ajax({
       method: 'GET',
       url: baseURL() + "/cosmetic_products/" + event.target.id,
@@ -132,36 +128,32 @@ $(document).ready(function(){
    // });
 
 
-
-
-
-
    // CREATING NEW COSMETIC ITEM
    $("#new-prod-button").on("click", function(event){
-      var fd = new FormData();
-      fd.append('name', $("#new-prod-name").val());
-      fd.append('brand', $("#new-prod-brand").val());
-      fd.append('color', $("#new-prod-color").val());
-      fd.append('price', parseFloat($("#new-prod-price").val()));
-      fd.append('purchase_date', $("#new-prod-date").val());
-      fd.append('category_id', $("#new-prod-cat").val());
-      fd.append('image', $("#new-prod-image")[0].files[0]);
+    var fd = new FormData();
+    fd.append('name', $("#new-prod-name").val());
+    fd.append('brand', $("#new-prod-brand").val());
+    fd.append('color', $("#new-prod-color").val());
+    fd.append('price', parseFloat($("#new-prod-price").val()));
+    fd.append('purchase_date', $("#new-prod-date").val());
+    fd.append('category_id', $("#new-prod-cat").val());
+    fd.append('image', $("#new-prod-image")[0].files[0]);
 
-      $.ajax({
-        type: 'POST',
-        url: baseURL() + "/cosmetic_products",
-        processData: false,
-        contentType: false,
-        cache: false,
-        data: fd,
-        headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
-      }).done(function(){
-        $("#new-product").html("Product saved to cosmetic bag")
-        console.log("Created new product");
-      }).fail(function(){
-        console.log("Failed to create product");
-      });
-   });
+    $.ajax({
+      type: 'POST',
+      url: baseURL() + "/cosmetic_products",
+      processData: false,
+      contentType: false,
+      cache: false,
+      data: fd,
+      headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
+    }).done(function(){
+      $("#new-product").html("Product saved to cosmetic bag")
+      console.log("Created new product");
+    }).fail(function(){
+      console.log("Failed to create product");
+    });
+  });
 
 
     // NEW USER BUTTON
@@ -184,7 +176,7 @@ $(document).ready(function(){
       .fail(function(error){
         console.log("Error in creating new user " + error);
       });
-  });
+    });
 
 
     // LOGIN BUTTON
@@ -225,11 +217,9 @@ $(document).ready(function(){
         method: 'DELETE',
         url: baseURL() + "/logout",
         headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
-      })
-      .done(function(){
+      }).done(function(){
         console.log("logged out");
-      })
-      .fail(function(){
+      }).fail(function(){
         alert("Error in logging out");
       }).always(function(){
         simpleStorage.set('token', '');
@@ -240,11 +230,11 @@ $(document).ready(function(){
 
 
     // USER GREETING
-    var renderUserGreeting = function(data){
-      $("#userDiv").html("Welcome, " + data.name);
-    };
+  var renderUserGreeting = function(data){
+    $("#userDiv").html("Welcome, " + data.name);
+  };
 
-  });
+});
 
 
 
@@ -253,18 +243,15 @@ var getCategories = function(){
     method: 'GET',
     url: baseURL() + "/categories",
     headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
-  })
-  .done(function(category_data){
+  }).done(function(category_data){
     console.log(category_data);
     category_data.forEach(function(category){
       var html = "<option value='" + category.id + "'> " + category.name + "</option>";
-     $('#new-prod-cat').append(html);
+      $('#new-prod-cat').append(html);
     });
-  })
-  .fail(function(){
+  }).fail(function(){
     alert("Failed getting cosmetic categories");
   });
-
 };
 
 // FUNCTION THAT CHECKS TO SEE IF TOKEN IS PRESENT, TO SHOW THINGS, HIDE THINGS
