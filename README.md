@@ -17,9 +17,9 @@ User can select which products to view based on category dropdown.
 
 ##Wireframes
 
-![alt tag](/Users/Nawal/GA_Projects/cosmetic_app/front_end/IMG_4619.JPG)
+![alt tag](http://i.imgur.com/WFymRox.png?1)
 
-![alt tag](/Users/Nawal/GA_Projects/cosmetic_app/front_end/IMG_4620.JPG)
+![alt tag](http://i.imgur.com/Vk53R5h.png?1)
 
 
 ##Description
