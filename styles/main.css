@@ -7,8 +7,8 @@
   background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
 }
 
-#brushheader{
-  background-image: url("http://i.imgur.com/ofL3GvE.png");
+/*#brushheader{
+  background-image: url("http://i.imgur.com/Z5muPfv.png?1");
   background-repeat: no-repeat;
   height: 281px;
   width: 508px;
@@ -16,16 +16,16 @@
   right: 0;
   top:12%;
   background-size: cover;
-}
+}*/
 
 #compactheader{
 
-  background-image: url("https://files.slack.com/files-pri/T0351JZQ0-F0600GHHA/compact_logo.png");
+  background-image: url("http://i.imgur.com/z2buruM.gif?1");
   width: 510px;
   height: 130px;
   background-repeat: no-repeat;
   position: absolute;
-  left: calc(50% - 255px);
+  left: calc(50% - 155px);
   top: 190px;
 }
  #wrapper{
@@ -42,8 +42,9 @@ img {
 body {
   width:100%;
   background-color: #F2F1ED;
-  background-image: url("http://www.berjeinc.com/images/background_cosmetics.jpg");
+  background-image: url("http://i.imgur.com/DkMuDVn.jpg?1");
   background-repeat: no-repeat;
+  /*background-size:contain;*/
 }
 
 #new-product{
@@ -51,8 +52,7 @@ body {
 }
 
 #aboutapp{
-
-  margin-left:15%;
+  margin-left:20%;
   margin-bottom:50px;
   font-family:arial;
   color:black;
@@ -69,7 +69,6 @@ body {
 }
 
 
-
 #new-product{
   display:none;
 }
@@ -84,7 +83,7 @@ body {
 #login{
  display:none;
  font-size:16px;
- margin-left:35%;
+ margin-left:40%;
  margin-top:-10%;
 }
 
@@ -109,7 +108,7 @@ body {
 
 /*NEW USER*/
 #new-user{
-  margin-left:35%;
+  margin-left:40%;
   margin-top:-10%;
   font-size:16px;
 }
@@ -142,13 +141,13 @@ body {
 
 /*WELCOME MESSAGE*/
 #userDiv{
-  margin-left:40%;
+  margin-left:43%;
   font-size:30px;
 }
 
 /*ADD COSMETIC ITEM*/
 #new-product{
-  margin-left:35%;
+  margin-left:40%;
   margin-top:2%;
   font-size:16px;
 }
