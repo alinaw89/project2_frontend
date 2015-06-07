@@ -38,6 +38,7 @@ $(document).ready(function(){
 
     $.ajax({
       url: baseURL() + '/categories/' + categoryID,
+      // sends HTTP GET request
       method: 'GET',
       dataType: 'json',
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
