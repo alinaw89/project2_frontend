@@ -86,6 +86,25 @@ $(document).ready(function(){
    });
 
 
+   // DELETING COSMETIC ITEM
+   var wrapCosmetic = function(){
+   $("#deleteprod").on('click', function(event){
+    var answer = confirm("Are you sure?");
+    if (answer){
+       $.ajax({
+      method: 'DELETE',
+      url: baseURL() + "/cosmetic_products/" + $('#deleteprod').data('product-id'),
+      headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
+    }).done(function(cosmetic_product_data){
+
+    });
+    } else{
+      console.log("Will not delete product");
+    };
+
+   });
+};
+
   // RENDERING COSMETIC ITEM
    $("#cosmetic_products").on("click", function(event){
     $.ajax({
@@ -94,13 +113,27 @@ $(document).ready(function(){
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(cosmetic_product_data){
       console.log(cosmetic_product_data);
-      var html = "<dl> <dt>Name</dt><dd>" + cosmetic_product_data.name + "<dt>Brand</dt><dd>" + cosmetic_product_data.brand + "<dt>Color</dt><dd>" + cosmetic_product_data.color + "<dt>Price</dt><dd>" + cosmetic_product_data.price + "<dt>Purchase Date</dt><dd>" + cosmetic_product_data.purchase_date + "<dt>Category</dt><dd>" + cosmetic_product_data.category_name + "<dt>Image</dt><dd>" + '<img src="' + cosmetic_product_data.photo + '"/>' + '<button>Edit</button>' + '<button>Delete</button>' ;
+      var html = "<dl> <dt>Name</dt><dd>" + cosmetic_product_data.name + "<dt>Brand</dt><dd>" + cosmetic_product_data.brand + "<dt>Color</dt><dd>" + cosmetic_product_data.color + "<dt>Price</dt><dd>" + cosmetic_product_data.price + "<dt>Purchase Date</dt><dd>" + cosmetic_product_data.purchase_date + "<dt>Category</dt><dd>" + cosmetic_product_data.category_name + "<dt>Image</dt><dd>" + '<img src="' + cosmetic_product_data.photo + '"/>' + '<button id="editprod">Edit</button>' + '<button id="deleteprod" data-product-id="' + cosmetic_product_data.id + '">Delete</button>';
       $("#cosmetic_product").html("");
       $("#cosmetic_product").append(html);
+      wrapCosmetic();
     }).fail(function(){
       alert("Failed to load products");
     });
   });
+
+
+
+   // EDITING COSMETIC ITEM
+   // $("#editprod").on('click', function(event){
+   //  $.ajax({
+   //    method:
+   //  })
+   // });
+
+
+
+
 
 
    // CREATING NEW COSMETIC ITEM
