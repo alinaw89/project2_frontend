@@ -1,7 +1,7 @@
 // PATH FOR HEROKU
 var baseURL = function(){
-  return "http://localhost:3000";
-  // return "http://heroku";
+  // return "http://localhost:3000";
+  return "https://fathomless-lowlands-1030.herokuapp.com";
 };
 
 
