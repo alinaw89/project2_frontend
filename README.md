@@ -4,7 +4,7 @@
 ##ABOUT
 COMPACT is a rails app that allows users to track inventory of their cosmetic items. Users can upload items and view them in their virtual cosmetic bag.
 
-The app can be viewed at http://compact.herokuapp.com/
+The app can be viewed at  "https://fathomless-lowlands-1030.herokuapp.com"
 
 ##Features
 
