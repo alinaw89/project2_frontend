@@ -32,8 +32,9 @@ $(document).ready(function(){
 
 
 
-  // SHOW ALL COSMETIC PRODUCTS
+  // SHOW ALL COSMETIC PRODUCTS BY CATEGORY
   $("#display-cosmetic-bag").on('click', function(event){
+    //gives the id of the category that was clicked on
     var categoryID = event.target.dataset.categoryId;
 
     $.ajax({
@@ -41,11 +42,14 @@ $(document).ready(function(){
       // sends HTTP GET request
       method: 'GET',
       dataType: 'json',
+      // you send the header back so your back end knows who it is; when you log in you get the token, and when you do other options you pass the token back...so it checks if that token is the same as the token saved
+      //simplestorage stores the token, more secure than storing in a div
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(category_data){
       $(".content").hide();
       $("#cosmetic_products").show();
       $("#cosmetic_products").html('');
+      //for each category, pass in cosmetic product param, it'll append to the cosmetic product list with all of the cosmetic product names in that category
       category_data.forEach(function(cosmetic_product){
       $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
         });
@@ -53,12 +57,8 @@ $(document).ready(function(){
   });
 
 
-  // // ABOUT COMPACT BLURB
-  // $("#about-compact").on('click', function(){
-  //   $("#aboutapp").show();
-  // });
 
-
+// SHOW ALL COSMETIC PRODUCTS
   var showAllProducts = function(){
     $.ajax({
       method: 'GET',
@@ -68,6 +68,7 @@ $(document).ready(function(){
       console.log(cosmetic_product_data);
       $(".content").hide();
       $("#cosmetic_products").html('');
+      //pass in cosmetic product param, it'll append each cosmetic product to a list with all of the cosmetic products names
       cosmetic_product_data.forEach(function(cosmetic_product){
       $("#cosmetic_products").append("<li id='" + cosmetic_product.id + "'>" + cosmetic_product.name + "</li>");
     });
@@ -77,35 +78,17 @@ $(document).ready(function(){
     });
   };
 
-  // SHOW ALL COSMETIC PRODUCTS
+
+  //  CLICK FUNCTION TO SHOW ALL COSMETIC PRODUCTS
   $('#show-all-products').on('click', showAllProducts);
 
 
-
-   // DELETING COSMETIC ITEM
-  var wrapCosmetic = function(){
-    $("#deleteprod").on('click', function(event){
-      var answer = confirm("Are you sure?");
-      if (answer){
-        $.ajax({
-          method: 'DELETE',
-          url: baseURL() + "/cosmetic_products/" + $('#deleteprod').data('product-id'),
-          headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
-        }).done(function(cosmetic_product_data){
-          $("#cosmetic_product").html('');
-          showAllProducts();
-          console.log("Product successfully deleted");
-        });
-      } else {
-          console.log("Will not delete product");
-      };
-    });
-  };
 
   // RENDERING COSMETIC ITEM
   $("#cosmetic_products").on("click", function(event){
     $.ajax({
       method: 'GET',
+      //specific cosmetic_product id that was clicked
       url: baseURL() + "/cosmetic_products/" + event.target.id,
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(cosmetic_product_data){
@@ -120,18 +103,37 @@ $(document).ready(function(){
   });
 
 
+  // DELETING COSMETIC ITEM
+  var wrapCosmetic = function(){
+    $("#deleteprod").on('click', function(event){
+      //confirms with the user
+      var answer = confirm("Are you sure?");
+      // if true
+      if (answer){
+        $.ajax({
+          method: 'DELETE',
+          //passes in the product id that was clicked to be deleted
+          url: baseURL() + "/cosmetic_products/" + $('#deleteprod').data('product-id'),
+          headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
+        }).done(function(cosmetic_product_data){
+          $("#cosmetic_product").html('');
+          // automatically updates the cosmetic products list without deleted item
+          showAllProducts();
+          console.log("Product successfully deleted");
+        });
+      } else {
+          console.log("Will not delete product");
+      };
+    });
+  };
 
-   // EDITING COSMETIC ITEM
-   // $("#editprod").on('click', function(event){
-   //  $.ajax({
-   //    method:
-   //  })
-   // });
 
 
    // CREATING NEW COSMETIC ITEM
    $("#new-prod-button").on("click", function(event){
+    //using form data object for image file upload
     var fd = new FormData();
+    // each input area that was filled out
     fd.append('name', $("#new-prod-name").val());
     fd.append('brand', $("#new-prod-brand").val());
     fd.append('color', $("#new-prod-color").val());
@@ -149,6 +151,7 @@ $(document).ready(function(){
       data: fd,
       headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
     }).done(function(){
+      //renders new product to html
       $("#new-product").html("Product saved to cosmetic bag")
       console.log("Created new product");
     }).fail(function(){
@@ -169,12 +172,11 @@ $(document).ready(function(){
         type: 'POST',
         url: baseURL() + '/register',
         data: {credentials: newUser}
-      })
-      .done(function(response){
+      }).done(function(response){
+        //hides new user div
         $("#new-user").hide();
         console.log("Your account has been created!")
-      })
-      .fail(function(error){
+      }).fail(function(error){
         console.log("Error in creating new user " + error);
       });
     });
@@ -195,17 +197,21 @@ $(document).ready(function(){
         url: baseURL() + '/login',
         dataType: "json",
         data: params
-      })
-      .done(function(data){
+      }).done(function(data){
+        //login div hidden
         $("#login").hide();
+        //renders welcome message
         renderUserGreeting(data);
         // setting token to a non-empty string (correct value)
+        //simple storage to store data locally (token)
+        // lets the user be logged in for 12 hrs? and after that, the session is closed
         simpleStorage.set('token', data.token, {TTL: 43200000});
+        //when user logs in, certain divs shown/hidden
         toggle();
+        //sets dropdown button for categories
         getCategories();
         console.log("Successful login!");
-      })
-      .fail(function(error){
+      }).fail(function(error){
         console.log("Error in login " + error);
       });
     });
@@ -238,7 +244,7 @@ $(document).ready(function(){
 });
 
 
-
+  //sets drop down button for categories
 var getCategories = function(){
   $.ajax({
     method: 'GET',
@@ -246,6 +252,7 @@ var getCategories = function(){
     headers: { Authorization: 'Token token=' + simpleStorage.get('token') }
   }).done(function(category_data){
     console.log(category_data);
+    //for each category, takes name and appends to new prod category  select list
     category_data.forEach(function(category){
       var html = "<option value='" + category.id + "'> " + category.name + "</option>";
       $('#new-prod-cat').append(html);

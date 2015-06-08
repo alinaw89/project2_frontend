@@ -7,17 +7,6 @@
   background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
 }
 
-/*#brushheader{
-  background-image: url("http://i.imgur.com/Z5muPfv.png?1");
-  background-repeat: no-repeat;
-  height: 281px;
-  width: 508px;
-  position: absolute;
-  right: 0;
-  top:12%;
-  background-size: cover;
-}*/
-
 #compactheader{
 
   background-image: url("http://i.imgur.com/z2buruM.gif?1");
@@ -44,7 +33,6 @@ body {
   background-color: #F2F1ED;
   background-image: url("http://i.imgur.com/DkMuDVn.jpg?1");
   background-repeat: no-repeat;
-  /*background-size:contain;*/
 }
 
 #new-product{
@@ -144,6 +132,8 @@ body {
   margin-left:43%;
   font-size:30px;
 }
+
+
 
 /*ADD COSMETIC ITEM*/
 #new-product{
