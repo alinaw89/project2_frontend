@@ -1,131 +1,136 @@
 /*HEADER*/
+#hero{
+  background-image: url("http://i.imgur.com/KzxzKQB.jpg?1");
+  background-size:100%;
+  overflow:hidden;
+  min-height:200px;
+  background-repeat: no-repeat;
+  background-position: 0 -535px;
+  text-align:center;
+  padding-top: 75px;
+}
 
-#navbartrans{
+#hero h1{
+  color:black;
+  font-size:60px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 7px;
+}
+
+
+/*#navbartrans{
   background:rgba(33,33,33,1);
   background:linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
   background:-webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
   background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-}
-
-#compactheader{
-
-  background-image: url("http://i.imgur.com/z2buruM.gif?1");
-  width: 510px;
-  height: 130px;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: calc(50% - 155px);
-  top: 190px;
-}
- #wrapper{
-  height: 320px;
- }
-
-img {
-  margin-top:-230px;
-  margin-left:290px;
-}
+}*/
 
 
 /*BODY*/
-body {
-  width:100%;
-  background-color: #F2F1ED;
-  background-image: url("http://i.imgur.com/DkMuDVn.jpg?1");
-  background-repeat: no-repeat;
+
+#aboutapp{
+  display:none;
+
+}
+
+#aboutimg{
+  float:left;
+  margin-left: -70px;
+}
+
+#aboutwords{
+  float:right;
+  margin-top: 170px;
+  margin-right: 200px;
+  padding: 0;
+  font-family: 'Marck Script', cursive;
+}
+
+#aboutwords h4{
+  line-height:30px;
+  font-size:21px;
 }
 
 #new-product{
   clear:both;
 }
 
-#aboutapp{
-  margin-left:20%;
-  margin-bottom:50px;
-  font-family:arial;
-  color:black;
-  margin-top:2%;
-  width:80%;
-}
-
-#aboutapp h4{
-  font-weight:bold;
-  margin-left:23%;
-  word-spacing:5px;
-  height:200px;
-  line-height:200%;
-}
-
-
 #new-product{
   display:none;
 }
 
+
+
+
+/*NEW USER*/
+
 #new-user{
+
   display:none;
+  font-size:16px;
+}
+
+#new-user h2{
+  font-family: 'Marck Script', cursive;
+  font-size:2em;
+}
+
+.content input{
+  width:100%;
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding:6px;
+  font-family: 'Muli', sans-serif;
+}
+
+ #new-user .new{
+  color:#D2693C;
+  font-weight: bold;
+  font-family: 'Muli', sans-serif;
 }
 
 
+#new-user-button{
+  margin-top:25px;
+  background-color:white;
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2rem;
+  background-color: #F9E6D3;
+  border-color: #D79F8A;
+}
 
 /*LOGIN*/
 #login{
  display:none;
  font-size:16px;
- margin-left:40%;
- margin-top:-10%;
 }
 
-.user{
-  border-radius:50px;
-  padding:10px;
+#login h2{
+  font-family: 'Marck Script', cursive;
+  font-size:2em;
 }
 
-#login-user-email{
-  margin-left:4%;
-}
-
-#login-user-pw{
-  margin-left:1%;
+#login .log{
+  color:#D2693C;
+  font-weight: bold;
+  font-family: 'Muli', sans-serif;
 }
 
 #login-button{
   margin-top:25px;
-  margin-left:15%;
-  border-radius:10px;
+  background-color:white;
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2rem;
+  background-color: #F9E6D3;
+  border-color: #D79F8A;
 }
 
-/*NEW USER*/
-#new-user{
-  margin-left:40%;
-  margin-top:-10%;
-  font-size:16px;
-}
-
-.content input{
-  margin-left:50px;
-}
-
-#name{
-  margin-left:4%;
-}
-
-#email{
-  margin-left:4.3%;
-}
-
-#pw{
-  margin-left:1.8%;
-}
-
-#cpw{
-  margin-left:.03%;
-}
-
-#new-user-button{
-  margin-top:25px;
-  margin-left:13%;
-  border-radius:10px;
-}
 
 /*WELCOME MESSAGE*/
 #userDiv{
@@ -137,18 +142,42 @@ body {
 
 /*ADD COSMETIC ITEM*/
 #new-product{
-  margin-left:40%;
-  margin-top:2%;
+/*  margin-left:40%;
+  margin-top:2%;*/
   font-size:16px;
 }
 
 #new-prod-button{
   margin-top:25px;
-  margin-left:10%;
-  border-radius:10px;
+  background-color:white;
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2rem;
+  background-color: #F9E6D3;
+  border-color: #D79F8A;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
 }
 
-#prodname{
+#new-product h2{
+  font-family: 'Marck Script', cursive;
+  font-size:2em;
+}
+
+.prod{
+ /* color:#DFAD96;*/
+  color:#D2693C;
+  font-weight: bold;
+  font-family: 'Muli', sans-serif;
+}
+
+#new-product input{
+  font-family: 'Muli', sans-serif;
+  padding-left: 15px;
+}
+/*#prodname{
   margin-left:5px;
 }
 
@@ -166,7 +195,7 @@ body {
 
 #proddate{
   margin-left:11px;
-}
+}*/
 
 #prodcat{
   margin-left:12%;
@@ -180,9 +209,9 @@ body {
   margin-left:5px;
 }
 
-.content h3{
+/*.content h3{
   margin-left:7%;
-}
+}*/
 
 
 /*VIEW PRODUCTS*/
@@ -194,7 +223,9 @@ body {
   margin-left: 24%;
   float:left;
   font-weight:bold;
-  font-size:16px;
+  font-size:25px;
+  color:#DFAD96;
+  word-spacing:2px;
 }
 
 ul{
