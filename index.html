@@ -4,31 +4,66 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Compact</title>
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
- <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
- <link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
- <link href='http://fonts.googleapis.com/css?family=Muli:400,300italic' rel='stylesheet' type='text/css'>
+   <!-- Custom CSS -->
+  <link href="styles/simple-sidebar.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Muli:400,300italic' rel='stylesheet' type='text/css'>
 
 
 </head>
 <body>
+<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
 
 
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://i.imgur.com/KzxzKQB.jpg?1" alt="Chania">
+    </div>
 
+    <div class="item">
+      <img src="img_chania2.jpg" alt="Chania">
+    </div>
+
+    <div class="item">
+      <img src="img_flower.jpg" alt="Flower">
+    </div>
+
+  </div>
+
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
 
 
 <!-- HEADER -->
-<div id="hero">
-<!--  <div id="brushheader"></div> -->
-<!-- <div id="compactheader"></div> -->
+<!-- <div id="hero">
+<!-- <div id="brushheader"></div> -->
+<!-- <div id="compactheader"></div>
 <h1>COMPACT</h1>
-</div>
+</div> -->
 <!-- END HEADER -->
 
 
 <!-- BOOTSTRAP NAVIGATION BAR -->
-<nav  id="navbartrans" class="navbar navbar-inverse">
+<!-- <nav  id="navbartrans" class="navbar navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -37,11 +72,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">Compact</a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right"> -->
         <!-- <li class="active"><a id="about-compact" href="#">About Compact<span class="sr-only">(current)</span></a></li> -->
-        <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
+   <!--      <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
         <li class="dropdown">
           <a  id='show-all-products' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
           <ul id="display-cosmetic-bag" class="dropdown-menu" role="menu">
@@ -52,7 +87,7 @@
             <li><a href='#' data-category-id='5'>Body</a></li>
           </ul>
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Compact User<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Log In<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a id="register-user"  href="#">SignUp</a></li>
             <li><a id="user-login" href="#">Sign In</a></li>
@@ -61,18 +96,93 @@
         </li>
       </ul>
     </div>
-    </nav>
+    </nav> -->
     <!-- END NAVIGATION BAR -->
+
+
+<!-- NEW NAV STUFF -->
+
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        COMPACT
+                    </a>
+                </li>
+                <li>
+                  <a id="register-user"  href="#">Register</a>
+                </li>
+                <li>
+                  <a id="user-login" href="#">Sign In</a>
+                </li>
+                <li>
+                  <a id="logout" href="#">Logout</a>
+                </li>
+                <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
+                <li class="dropdown">
+                    <a  id='show-all-products' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
+                    <ul id="display-cosmetic-bag" class="dropdown-menu" role="menu">
+                      <li><a href="#" data-category-id='1'>Eyes</a></li>
+                      <li><a href="#" data-category-id='2'>Lips</a></li>
+                      <li><a href="#" data-category-id='3'>Face</a></li>
+                      <li><a href="#" data-category-id='4'>Hair</a></li>
+                      <li><a href='#' data-category-id='5'>Body</a></li>
+                    </ul>
+                  </li>
+               <!--  <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li> -->
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <h1 id="maintitle">Compact</h1>
+                <p>A makeup inventory application</p>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> << </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+
+
+
+<!-- END NEW STUFF -->
+
+
+
+
+
+
 
 
 
 <!-- ABOUT COMPACT -->
-<div class="col-xs-8 col-xs-offset-2 content" id="aboutapp">
+<!-- <div class="col-xs-8 col-xs-offset-2 content" id="aboutapp">
 <div id="aboutimg"><img src="http://i.imgur.com/9kisCbV.png?1"/></div>
 <div id="aboutwords"><h4>An inventory application
 to help keep track </br> of your makeup in a virtual cosmetic bag.</h4>
 </div>
-</div>
+</div> -->
+
 <!-- END ABOUT COMPACT-->
 
 
@@ -150,6 +260,7 @@ to help keep track </br> of your makeup in a virtual cosmetic bag.</h4>
 </div>
 <!-- END ALL COSMETIC PRODUCTS -->
 
+</div> <!-- End page content wrapper -->
 
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -157,6 +268,15 @@ to help keep track </br> of your makeup in a virtual cosmetic bag.</h4>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/simpleStorage.js"></script>
   <script src="js/compact.js" type="text/javascript" ></script>
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 </body>
 </html>
 

@@ -1,5 +1,20 @@
+body{
+/*  background-color: #EE018D;*/
+  background-image: url("http://www.decoweddings.com/wp-content/uploads/art-deco-wedding-makeup-tl.jpg");/*http://i.imgur.com/KzxzKQB.jpg?1*//*http://www.vectorfree.com/media/vectors/make-up-model.jpg*//*http://4.bp.blogspot.com/-jd64j9Q8Cvw/Ur5yz0laGbI/AAAAAAAARX0/UEkDsae6p6c/s1600/Elena.jpg*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-right:0;
+  margin-right: 0;
+  background-color: black;
+}
+
+a{
+  color: white;
+}
+
+
 /*HEADER*/
-#hero{
+/*#hero{
   background-image: url("http://i.imgur.com/KzxzKQB.jpg?1");
   background-size:100%;
   overflow:hidden;
@@ -8,23 +23,26 @@
   background-position: 0 -535px;
   text-align:center;
   padding-top: 75px;
-}
-
+}*/
+/*
 #hero h1{
   color:black;
   font-size:60px;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 7px;
-}
-
-
-/*#navbartrans{
-  background:rgba(33,33,33,1);
-  background:linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background:-webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
 }*/
 
+
+.navbar{
+  background:rgba(33,33,33,.3);
+ background:linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background:-webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+}
+
+/*.navbar-brand {
+  font-size: 30px;
+}*/
 
 /*BODY*/
 
@@ -34,8 +52,8 @@
 }
 
 #aboutimg{
-  float:left;
-  margin-left: -70px;
+  text-align:center;
+  margin-top: -20px;
 }
 
 #aboutwords{
@@ -68,6 +86,7 @@
 
   display:none;
   font-size:16px;
+  height: 100%;
 }
 
 #new-user h2{
@@ -103,9 +122,12 @@
 }
 
 /*LOGIN*/
+
+
 #login{
  display:none;
  font-size:16px;
+ height: 100%;
 }
 
 #login h2{
