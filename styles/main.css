@@ -1,16 +1,4 @@
-body{
-/*  background-color: #EE018D;*/
-  background-image: url("http://www.decoweddings.com/wp-content/uploads/art-deco-wedding-makeup-tl.jpg");/*http://i.imgur.com/KzxzKQB.jpg?1*//*http://www.vectorfree.com/media/vectors/make-up-model.jpg*//*http://4.bp.blogspot.com/-jd64j9Q8Cvw/Ur5yz0laGbI/AAAAAAAARX0/UEkDsae6p6c/s1600/Elena.jpg*/
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-right:0;
-  margin-right: 0;
-  background-color: black;
-}
 
-a{
-  color: white;
-}
 
 
 /*HEADER*/
@@ -45,6 +33,32 @@ a{
 }*/
 
 /*BODY*/
+
+body{
+/*  background-color: #EE018D;*/
+  background-image: url("http://www.decoweddings.com/wp-content/uploads/art-deco-wedding-makeup-tl.jpg");/*http://i.imgur.com/KzxzKQB.jpg?1*//*http://www.vectorfree.com/media/vectors/make-up-model.jpg*//*http://4.bp.blogspot.com/-jd64j9Q8Cvw/Ur5yz0laGbI/AAAAAAAARX0/UEkDsae6p6c/s1600/Elena.jpg*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-right:0;
+  margin-right: 0;
+  background-color: black;
+  color: #D2693C;
+}
+
+a{
+  color: white;
+}
+
+#maintitle{
+  font-family: 'Marck Script', cursive;
+  font-size: 80px;
+  color: #D79F8A;
+}
+
+#subtitle{
+  font-size:17px;
+}
+
 
 #aboutapp{
   display:none;
@@ -87,11 +101,13 @@ a{
   display:none;
   font-size:16px;
   height: 100%;
+  background-color: rgba(95, 93, 93, 0.5);
 }
 
 #new-user h2{
   font-family: 'Marck Script', cursive;
   font-size:2em;
+  color: #D79F8A;
 }
 
 .content input{
@@ -128,11 +144,13 @@ a{
  display:none;
  font-size:16px;
  height: 100%;
+ background-color:rgba(95, 93, 93, 0.5);
 }
 
 #login h2{
   font-family: 'Marck Script', cursive;
   font-size:2em;
+  color: #D79F8A;
 }
 
 #login .log{
@@ -164,9 +182,10 @@ a{
 
 /*ADD COSMETIC ITEM*/
 #new-product{
-/*  margin-left:40%;
-  margin-top:2%;*/
+  margin-top: -40px;
+  padding-bottom: 15px;
   font-size:16px;
+  background-color:rgba(95, 93, 93, 0.5);
 }
 
 #new-prod-button{
@@ -186,6 +205,7 @@ a{
 #new-product h2{
   font-family: 'Marck Script', cursive;
   font-size:2em;
+  color: #D79F8A;
 }
 
 .prod{
@@ -242,12 +262,17 @@ a{
 }
 
 #cosmetic_products{
-  margin-left: 24%;
-  float:left;
-  font-weight:bold;
-  font-size:25px;
-  color:#DFAD96;
-  word-spacing:2px;
+  margin-left: 250px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* float: left; */
+  font-weight: bold;
+  font-size: 25px;
+  color: #DFAD96;
+  word-spacing: 2px;
+/*  background-color: rgba(95, 93, 93, 0.5);*/
+  width: 700px;
+  height: 400px;
 }
 
 ul{
@@ -256,6 +281,13 @@ ul{
 
 /*VIEW SINGLE PRODUCT*/
 #cosmetic_product{
-  float:left;
-  margin-left:50px;
+  /*text-align: center;
+  float: left;
+  margin-left: 440px;*/
+  background-color: rgba(95, 93, 93, 0.5);
+  font-size: 20px;
+  text-align: center;
+  float: right;
+  margin-top: -540px;
+  margin-right:54px;
 }
