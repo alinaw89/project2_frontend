@@ -42,7 +42,7 @@ body{
   padding-right:0;
   margin-right: 0;
   background-color: black;
-  color: #D2693C;
+  color: white;
 }
 
 a{
@@ -52,11 +52,13 @@ a{
 #maintitle{
   font-family: 'Marck Script', cursive;
   font-size: 80px;
-  color: #D79F8A;
+  color: rgb(227, 30, 45);
 }
 
 #subtitle{
-  font-size:17px;
+  font-size:19px;
+  font-family: 'Marck Script', cursive;
+  color: black;
 }
 
 
@@ -107,7 +109,7 @@ a{
 #new-user h2{
   font-family: 'Marck Script', cursive;
   font-size:2em;
-  color: #D79F8A;
+  color: white;
 }
 
 .content input{
@@ -119,7 +121,7 @@ a{
 }
 
  #new-user .new{
-  color:#D2693C;
+  color: rgb(227, 30, 45);
   font-weight: bold;
   font-family: 'Muli', sans-serif;
 }
@@ -133,7 +135,7 @@ a{
   padding-right: 2rem;
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
-  background-color: #F9E6D3;
+  background-color: rgb(158, 9, 20);
   border-color: #D79F8A;
 }
 
@@ -150,11 +152,11 @@ a{
 #login h2{
   font-family: 'Marck Script', cursive;
   font-size:2em;
-  color: #D79F8A;
+  color: white;
 }
 
 #login .log{
-  color:#D2693C;
+  color: rgb(227, 30, 45);
   font-weight: bold;
   font-family: 'Muli', sans-serif;
 }
@@ -167,7 +169,7 @@ a{
   padding-right: 2rem;
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
-  background-color: #F9E6D3;
+  background-color: rgb(158, 9, 20);
   border-color: #D79F8A;
 }
 
@@ -196,7 +198,7 @@ a{
   padding-right: 2rem;
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
-  background-color: #F9E6D3;
+  background-color: rgb(158, 9, 20);
   border-color: #D79F8A;
   font-family: 'Muli', sans-serif;
   font-weight: bold;
@@ -205,12 +207,12 @@ a{
 #new-product h2{
   font-family: 'Marck Script', cursive;
   font-size:2em;
-  color: #D79F8A;
+  color: white;
 }
 
 .prod{
  /* color:#DFAD96;*/
-  color:#D2693C;
+  color: rgb(227, 30, 45);
   font-weight: bold;
   font-family: 'Muli', sans-serif;
 }
@@ -268,7 +270,7 @@ a{
   /* float: left; */
   font-weight: bold;
   font-size: 25px;
-  color: #DFAD96;
+  color: rgb(227, 30, 45);
   word-spacing: 2px;
 /*  background-color: rgba(95, 93, 93, 0.5);*/
   width: 700px;
