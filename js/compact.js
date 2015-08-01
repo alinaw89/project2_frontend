@@ -13,21 +13,25 @@ $(document).ready(function() {
   // CLICK FUNCTION ON BUTTONS TO HIDE/SHOW CONTENT
   $("#register-user").on('click', function() {
     $(".content").hide();
+    $(".hideproduct").hide();
     $("#new-user").show();
   });
 
   $("#user-login").on('click', function() {
     $(".content").hide();
+    $(".hideproduct").hide();
     $("#login").show();
   });
 
   $("#display-cosmetic").on('click', function() {
     $(".content").hide();
+    $(".hideproduct").hide();
     $("#new-product").show();
   });
 
   $("#logout").on('click', function() {
     $(".content").hide();
+    $(".hideproduct").hide();
   });
 
   $("#about-compact").on('click', function() {
@@ -102,7 +106,7 @@ $(document).ready(function() {
       }
     }).done(function(cosmetic_product_data) {
       console.log(cosmetic_product_data);
-      var html = "<dl> <dt>Name</dt><dd>" + cosmetic_product_data.name + "<dt>Brand</dt><dd>" + cosmetic_product_data.brand + "<dt>Color</dt><dd>" + cosmetic_product_data.color + "<dt>Price</dt><dd>" + cosmetic_product_data.price + "<dt>Purchase Date</dt><dd>" + cosmetic_product_data.purchase_date + "<dt>Category</dt><dd>" + cosmetic_product_data.category_name + "<dt>Image</dt><dd>" + '<img src="' + cosmetic_product_data.photo + '"/>' + '</br>' + '<button id="editprod">Edit</button>' + " " + '<button id="deleteprod" data-product-id="' + cosmetic_product_data.id + '">Delete</button>';
+      var html = "<dl> <dt>Name:</dt><dd>" + cosmetic_product_data.name + "</dd>" + "<dt>Brand:</dt><dd>" + cosmetic_product_data.brand + "</dd>" + "<dt>Color:</dt><dd>" + cosmetic_product_data.color + "</dd>" + "<dt>Price:</dt><dd>" + cosmetic_product_data.price + "</dd>" + "<dt>Purchase Date:</dt><dd>" + cosmetic_product_data.purchase_date + "</dd>" + "<dt>Category:</dt><dd>" + cosmetic_product_data.category_name + "</dd>" + "<dt>Image:</dt><dd>" + '<img src="' + cosmetic_product_data.photo + '"/>' + '</br>' + '<button id="editprod">Edit</button>' + " " + '<button id="deleteprod" data-product-id="' + cosmetic_product_data.id + '">Delete</button>';
       $("#cosmetic_product").html("");
       $("#cosmetic_product").append(html);
       wrapCosmetic();
@@ -167,6 +171,7 @@ $(document).ready(function() {
       //renders new product to html
       $("#new-product").html("Product saved to cosmetic bag")
       console.log("Created new product");
+
     }).fail(function() {
       console.log("Failed to create product");
     });
