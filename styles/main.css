@@ -2,8 +2,6 @@
 body{
   background-color: #D41449;
   background-image: url("http://www.wpclipart.com/page_frames/more_frames/outdoor_scenes/star_pattern_background_1_T.png");
-  /*background-image: url("http://www.decoweddings.com/wp-content/uploads/art-deco-wedding-makeup-tl.jpg");*//*http://i.imgur.com/KzxzKQB.jpg?1*//*http://www.vectorfree.com/media/vectors/make-up-model.jpg*//*http://4.bp.blogspot.com/-jd64j9Q8Cvw/Ur5yz0laGbI/AAAAAAAARX0/UEkDsae6p6c/s1600/Elena.jpg*/
-  /*background-repeat: no-repeat;*/
   background-size: cover;
   padding-right:0;
   margin-right: 0;
@@ -16,7 +14,6 @@ body{
   background-size:100%;
   overflow:hidden;
   min-height:200px;
-  /*background-repeat: no-repeat;*/
   background-position: bottom;
   text-align:center;
   padding-top: 75px;
@@ -136,11 +133,6 @@ body{
   -moz-transform: scale(1.4);
   transform: scale(1.4);
 }
-
-
-
-
-
 
 
 
@@ -321,25 +313,7 @@ a{
   font-family: 'Poiret One', cursive;
   padding-left: 15px;
 }
-/*#prodname{
-  margin-left:5px;
-}
 
-#prodbrand{
-  margin-left:5px;
-}
-
-#prodcolor{
-  margin-left:12px;
-}
-
-#prodprice{
-  margin-left:14px;
-}
-
-#proddate{
-  margin-left:11px;
-}*/
 
 #prodcat{
   margin-left:12%;
@@ -353,15 +327,12 @@ a{
   margin-left:5px;
 }
 
-/*.content h3{
-  margin-left:7%;
-}*/
 
 
 /*VIEW PRODUCTS*/
-/*#cosbag{
+#cosbag{
   margin-left:42%;
-}*/
+}
 
 #cosmetic_products{
   margin-left: 230px;
@@ -377,6 +348,10 @@ a{
   color: #FF8ACC;
   font-family: 'Poiret One', cursive;
   float:left;
+}
+
+#cosmetic_products h2{
+  color: white;
 }
 
 ul{
