@@ -13,25 +13,27 @@ $(document).ready(function() {
   // CLICK FUNCTION ON BUTTONS TO HIDE/SHOW CONTENT
   $("#register-user").on('click', function() {
     $(".content").hide();
-    $(".hideproduct").hide();
     $("#new-user").show();
+    $(".hideproduct").hide();
   });
 
   $("#user-login").on('click', function() {
     $(".content").hide();
-    $(".hideproduct").hide();
     $("#login").show();
   });
 
+  $("#show-all-products").on('click', function() {
+    $(".hideproduct").show();
+  })
+
   $("#display-cosmetic").on('click', function() {
     $(".content").hide();
-    $(".hideproduct").hide();
     $("#new-product").show();
+    $(".hideproduct").hide();
   });
 
   $("#logout").on('click', function() {
     $(".content").hide();
-    $(".hideproduct").hide();
   });
 
   $("#about-compact").on('click', function() {
