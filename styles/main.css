@@ -1,65 +1,68 @@
 
-
-
-/*HEADER*/
-/*#hero{
-  background-image: url("http://i.imgur.com/KzxzKQB.jpg?1");
-  background-size:100%;
-  overflow:hidden;
-  min-height:200px;
-  background-repeat: no-repeat;
-  background-position: 0 -535px;
-  text-align:center;
-  padding-top: 75px;
-}*/
-/*
-#hero h1{
-  color:black;
-  font-size:60px;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 7px;
-}*/
-
-
-.navbar{
-  background:rgba(33,33,33,.3);
- background:linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background:-webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  background:-moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-}
-
-/*.navbar-brand {
-  font-size: 30px;
-}*/
-
-/*BODY*/
-
 body{
-/*  background-color: #EE018D;*/
-  background-image: url("http://www.decoweddings.com/wp-content/uploads/art-deco-wedding-makeup-tl.jpg");/*http://i.imgur.com/KzxzKQB.jpg?1*//*http://www.vectorfree.com/media/vectors/make-up-model.jpg*//*http://4.bp.blogspot.com/-jd64j9Q8Cvw/Ur5yz0laGbI/AAAAAAAARX0/UEkDsae6p6c/s1600/Elena.jpg*/
+  background-color: #D41449;
+  /*background-image: url("http://www.decoweddings.com/wp-content/uploads/art-deco-wedding-makeup-tl.jpg");*//*http://i.imgur.com/KzxzKQB.jpg?1*//*http://www.vectorfree.com/media/vectors/make-up-model.jpg*//*http://4.bp.blogspot.com/-jd64j9Q8Cvw/Ur5yz0laGbI/AAAAAAAARX0/UEkDsae6p6c/s1600/Elena.jpg*/
   background-repeat: no-repeat;
   background-size: cover;
   padding-right:0;
   margin-right: 0;
-  background-color: black;
-  color: rgb(227, 30, 45);
+  color: white;
+}
+
+/*HEADER*/
+#hero{
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/bc/7f/d6/bc7fd6b1aba2069596e01f91b9b68521.jpg");
+  background-size:100%;
+  overflow:hidden;
+  min-height:200px;
+  /*background-repeat: no-repeat;*/
+  background-position: bottom;
+  text-align:center;
+  padding-top: 75px;
+}
+
+
+#hero h1{
+  font-size:60px;
+  letter-spacing: 3px;
+  margin-top:-5px;
+}
+
+
+#compactheader{
+  color: #D41449;
+  font-family: 'Poiret One', cursive;
+  font-size:36px !important;
+}
+
+.navbar{
+  background-color:black;
+  font-family: Tahoma;
+  height:40px;
+  font-size: 12px;
+}
+
+
+
+/*CONTENT*/
+#container{
+  text-align:center;
+  margin:0 auto;
+  margin-top:59px;
+  margin-left:310px;
+}
+.col-xs-6{
+  background-color:black;
+  border:1px solid yellow;
+  height: 263px;
+  width: 441px;
+  text-align:center;
 }
 
 a{
   color: white;
 }
 
-#maintitle{
-  font-family: 'Marck Script', cursive;
-  font-size: 60px;
-  color: rgb(227, 30, 45);
-}
-
-#subtitle{
-  font-size:19px;
-  font-family: 'Marck Script', cursive;
-  color: black;
-}
 
 
 #aboutapp{

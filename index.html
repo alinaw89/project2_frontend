@@ -6,77 +6,43 @@
   <title>Compact</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
    <!-- Custom CSS -->
-  <link href="styles/simple-sidebar.css" rel="stylesheet">
+  <!-- <link href="styles/simple-sidebar.css" rel="stylesheet"> -->
 
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Muli:400,300italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
 
 </head>
 <body>
-<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-
-
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="http://i.imgur.com/KzxzKQB.jpg?1" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="img_chania2.jpg" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="img_flower.jpg" alt="Flower">
-    </div>
-
-  </div>
-
-
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div> -->
 
 
 <!-- HEADER -->
-<!-- <div id="hero">
-<!-- <div id="brushheader"></div> -->
-<!-- <div id="compactheader"></div>
-<h1>COMPACT</h1>
-</div> -->
+<div id="hero">
+  <div id="compactheader">
+    <h1>myCompact</h1>
+  </div>
+</div>
 <!-- END HEADER -->
 
 
 <!-- BOOTSTRAP NAVIGATION BAR -->
-<!-- <nav  id="navbartrans" class="navbar navbar">
+ <nav  id="navbartrans" class="navbar navbar navbar-static-top">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <div class="navbar-header navbar-static-top">
+      <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Compact</a>
+      <a class="navbar-brand" href="#"></a>
     </div>
-    <ul class="nav navbar-nav navbar-right"> -->
-        <!-- <li class="active"><a id="about-compact" href="#">About Compact<span class="sr-only">(current)</span></a></li> -->
-   <!--      <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
+    <ul class="nav navbar-nav navbar-right">
+         <!-- <li class="active"><a id="about-compact" href="#">About Compact<span class="sr-only">(current)</span></a></li> -->
+        <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
         <li class="dropdown">
           <a  id='show-all-products' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
           <ul id="display-cosmetic-bag" class="dropdown-menu" role="menu">
@@ -96,76 +62,22 @@
         </li>
       </ul>
     </div>
-    </nav> -->
+    </nav>
     <!-- END NAVIGATION BAR -->
 
+<!-- CONTENT IN HOMEPAGE -->
+<div id="container">
+  <div class="row">
+    <div class="col-xs-6"></div>
+    <div class="col-xs-6"></div>
+  </div>
+   <div class="row">
+    <div class="col-xs-6"></div>
+    <div class="col-xs-6"></div>
+  </div>
+</div>
+<!-- END CONTENT IN HOMEPAGE -->
 
-<!-- NEW NAV STUFF -->
-
-<div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        COMPACT
-                    </a>
-                </li>
-                <li>
-                  <a id="register-user"  href="#">Register</a>
-                </li>
-                <li>
-                  <a id="user-login" href="#">Sign In</a>
-                </li>
-                <li>
-                  <a id="logout" href="#">Logout</a>
-                </li>
-                <li><a id="display-cosmetic" href="#">Add Cosmetic</a></li>
-                <li class="dropdown">
-                    <a  id='show-all-products' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Cosmetic Bag <span class="caret"></span></a>
-                    <ul id="display-cosmetic-bag" class="dropdown-menu" role="menu">
-                      <li><a href="#" data-category-id='1'>Eyes</a></li>
-                      <li><a href="#" data-category-id='2'>Lips</a></li>
-                      <li><a href="#" data-category-id='3'>Face</a></li>
-                      <li><a href="#" data-category-id='4'>Hair</a></li>
-                      <li><a href='#' data-category-id='5'>Body</a></li>
-                    </ul>
-                  </li>
-               <!--  <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li> -->
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-12">
-                <h1 id="maintitle">Compact</h1>
-                <p id="subtitle">A makeup inventory app</p>
-               <!--  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> << </a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
-
-
-
-<!-- END NEW STUFF -->
 
 
 
