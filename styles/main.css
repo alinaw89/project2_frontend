@@ -19,49 +19,31 @@ body{
   padding-top: 75px;
 }
 
-
 #hero h1{
   font-size:60px;
   letter-spacing: 3px;
   margin-top:9px;
 }
 
-
 #compactheader{
   color: #D41449;
   font-family: 'Poiret One', cursive;
   font-size:36px !important;
 }
+/*END HEADER*/
 
+
+/*NAVBAR*/
 .navbar{
   background-color:black;
   font-family: 'Poiret One', cursive;
   height:40px;
   font-size: 16px;
 }
+/*END NAVBAR*/
 
 
-
-/*CONTENT*/
-/*#container{
-  text-align:center;
-  margin:0 auto;
-  margin-top:59px;
-  margin-left:310px;
-}
-.col-xs-6{
-  background-color:black;
-  border:1px solid yellow;
-  height: 263px;
-  width: 441px;
-  text-align:center;
-}
-
-.col-xs-6 img{
-  text-align: center;
-}*/
-
-
+/*CONTENT- three photos*/
 .photo-grid {
   margin: 1em auto;
   max-width: 1106px;
@@ -77,7 +59,6 @@ body{
   height:320px;
   width:320px;
   background-color:white;
-  /*width: 289px;*/
 }
 
 .photo-grid img {
@@ -133,7 +114,7 @@ body{
   -moz-transform: scale(1.4);
   transform: scale(1.4);
 }
-
+/*END CONTENT*/
 
 
 
@@ -178,7 +159,6 @@ a{
 
 
 /*NEW USER*/
-
 #new-user{
 
   display:none;
@@ -224,16 +204,16 @@ a{
   font-family: 'Poiret One', cursive;
   font-weight: bold;
 }
+/*END NEW USER*/
+
 
 /*LOGIN*/
-
-
 #login{
- display:none;
- font-size:16px;
- height: 100%;
- background-color:rgba(95, 93, 93, 0.5);
- color: black;
+  display:none;
+  font-size:16px;
+  height: 100%;
+  background-color:rgba(95, 93, 93, 0.5);
+  color: black;
 }
 
 #login h2{
@@ -262,14 +242,15 @@ a{
   font-family: 'Poiret One', cursive;
   font-weight: bold;
 }
+/*END LOGIN*/
 
 
-/*WELCOME MESSAGE*/
+/*WELCOME MSG*/
 #userDiv{
   margin-left:43%;
   font-size:30px;
 }
-
+/*END WELCOME MSG*/
 
 
 /*ADD COSMETIC ITEM*/
@@ -303,7 +284,6 @@ a{
 
 
 .prod{
- /* color:#DFAD96;*/
   color: #FF8ACC;
   font-weight: bold;
   font-family: 'Poiret One', cursive;
@@ -326,12 +306,10 @@ a{
 #prodimage{
   margin-left:5px;
 }
+/*END COSMETIC ITEM*/
 
 
-
-/*VIEW PRODUCTS*/
-
-
+/*VIEW ALL PRODUCTS*/
 #cosmetic_products{
   margin-left: 230px;
   padding-top: 40px;
@@ -355,6 +333,8 @@ a{
 ul{
   list-style-type: none;
 }
+/*END VIEW ALL PRODUCTS*/
+
 
 /*VIEW SINGLE PRODUCT*/
 #cosmetic_product{
@@ -373,3 +353,4 @@ ul{
   height: 120px;
   width:120px;
 }
+/*END VIEW SINGLE PRODUCT*/
